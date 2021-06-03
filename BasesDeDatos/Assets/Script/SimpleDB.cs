@@ -11,6 +11,7 @@ public class SimpleDB : MonoBehaviour
 
     private string dbName = "URI = file:FoodLog.db";
 
+    //llamamos a las funciones para crear y mostrar la tabla.
     void Start()
     {
         CreateDB();
@@ -18,6 +19,7 @@ public class SimpleDB : MonoBehaviour
         DisplayFood();
     }
 
+    //creamos la tabla. 
     public void CreateDB()
     {
         using (var connection = new SqliteConnection(dbName))
@@ -34,6 +36,7 @@ public class SimpleDB : MonoBehaviour
         }
     }
 
+    //aqui añadimos la comida y el tipo de comida a la tabla.
     public void AddFood()
     {
         using (var connection = new SqliteConnection(dbName))
@@ -52,7 +55,7 @@ public class SimpleDB : MonoBehaviour
         DisplayFood();
     }
 
-
+    //la comida que añadimos, la añadimos a la tabla y la ordena por el tipo de comida
     public void DisplayFood()
     {
         foodList.text = "";

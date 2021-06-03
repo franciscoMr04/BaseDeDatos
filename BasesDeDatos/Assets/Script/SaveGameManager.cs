@@ -12,6 +12,7 @@ public class SaveGameManager : MonoBehaviour
     public Text textoPrueba;
     public Text guardar;
 
+    //declaramos el string que queremos guardar
     public class Guardar
     {
         public string mensage;
@@ -20,6 +21,7 @@ public class SaveGameManager : MonoBehaviour
     public Guardar save;
 
 
+    //aqui lo que hacemos es guardar el texto que muestra la carta, la encripta y guarda en nuestro ordenador 
     public void GuardarCarta()
     {
 
@@ -40,6 +42,7 @@ public class SaveGameManager : MonoBehaviour
 
     }
 
+    //despues de guardarla, lo que hacemos es que la cargue en el mismo sitio que la guarda
     public void CargarCarta()
     {
 
@@ -57,7 +60,7 @@ public class SaveGameManager : MonoBehaviour
     }
 
     
-
+    //toda esta parte, creamos todo el sistema de encriptado y desencriptado del mensaje 
     byte[] _key = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
     byte[] _inicializationVector = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
 
